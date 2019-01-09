@@ -3,31 +3,32 @@ apply plugin: 'java'
 buildscript {
 
     ext {
-        springBootVersion = '1.3.7.RELEASE'
-        springCloudVersion = 'Brixton.SR5'
+        springBootVersion = '2.0.5.RELEASE'
+        springCloudVersion = 'Finchley.SR2'
     }
 
     repositories {
         mavenCentral()
         jcenter()
     }
-}
 
-allprojects{
-    apply plugin: 'idea'
-    apply plugin: 'spring-boot'
-    apply plugin: "org.springframework.boot" version "2.0.1.RELEASE"
-    apply plugin: 'io.spring.dependency-management'
-
-    version = '1.0'
-    group 'com.olive.sbm'
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
 }
 
 subprojects { subproject ->
     apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: "org.springframework.boot"
+    apply plugin: 'io.spring.dependency-management'
+
+    version = '1.0'
+    group 'com.olive.sbm'
+
     compileJava {
-        sourceCompatibility = '1.9'
-        targetCompatibility = '1.9'
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
 
         options.encoding = 'UTF-8'
     }
