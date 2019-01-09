@@ -1,0 +1,11 @@
+build
+.idea
+*.iml
+*.ipr
+.gradle
+.DS_Store
+/debug.log
+velocity.log*
+sptcbu-org-data
+out
+/buildOutputCleanup
